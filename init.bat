@@ -533,7 +533,7 @@ echo === 5. Setup Complete ===
 echo.
 echo **************************************
 echo *                                    *
-echo *       🎉 Setup Complete! 🎉        *
+echo *           Setup Complete!          *
 echo *                                    *
 echo **************************************
 echo.
