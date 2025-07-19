@@ -46,8 +46,9 @@ pluginsフォルダからModApplyToggle.dllを取得して、所定の位置に�
 Modの適用は出来ます。  
 もし、一部ファイル欠落や或いはファイルの破損があった場合は、initフォルダより直接Downloadしてください。  
 
-# 免責
+# 免責 Disclaimer
 当 Mod 利用によるトラブルは一切責任を負いません
+The author takes no responsibility for any issues or damages caused by the use of this Mod.
 
 # ライセンスについて
 本Modはオープンソースではありません。  
