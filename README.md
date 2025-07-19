@@ -24,8 +24,8 @@ Manual_JPのフォルダの中に説明書、手順書があります。
 まず「Mod適用手順書.pdf」の内容を確認し、どのようにMod適用するのか理解してください。  
 Modに必要なファイルやフォルダ構成を作るためには、ルート直下にある「init.bat」を取得してください。  
 ![devcon1](img/init.bat_path.jpg)  
-ダウンロードするには先程の画像の黄色の箇所をクリックして、  
-ファイル個別ページへ移動後、DLマークをクリックしてください。  
+Downloadするには先程の画像の黄色の箇所をクリックして、  
+ファイル個別ページへ移動後、Downloadマークをクリックしてください。  
 ![devcon2](img/init.bat_dl.jpg) 
 取得後はAiArtImpostor.exeがあるフォルダに移動させて、その中で実行してください。  
 実行すると自動的にファイル・フォルダのDownloadが始まります。  
@@ -36,9 +36,11 @@ Modが適用されている場合、ゲーム画面左上に「Mod Apply」と�
 配置後、ゲームを起動することで配置したDLLをModとして適用します。  
 pluginsフォルダもinit.batと同じ階層、ルート直下にあります。Download方法も同じです。  
 ![devcon3](img/plugins_path.jpg)  
+どのModを適用するかはManual_JPの中にある説明書をご確認いただき、  
+必要なDLLをDownloadして、pluginsフォルダに配置してください。
 
 ## init.batでエラーなどが発生した場合
-力技になりますが、initフォルダの中身を手動でダウンロードして、  
+力技になりますが、initフォルダの中身を手動でDownloadして、  
 「Mod適用手順書.pdf」の記載されたフォルダ・ファイル構成にし、  
 pluginsフォルダからModApplyToggle.dllを取得して、所定の位置に配置することでも、  
 Modの適用は出来ます。  
