@@ -1,5 +1,6 @@
 # AiArtImpostor-BepInExMods
 This repository is for Unity Game AiArtImpostor PC with Mod.
+I confirmed Mods can work in Windows 11 with AiArtImpostor "ver 0.17.3" .
 This Mod is an unofficial , please observe the following when developing and using this Mod.  
 
 1. Mod development and use is as your own risk. Please deal with any problems by yourself.  
@@ -9,6 +10,7 @@ This Mod is an unofficial , please observe the following when developing and usi
 If requested by the original game developers or copyright holders, this Mod will be removed from public distribution without objection.
 
 このRepositryはAiArtImpostorのPC版のModになります。  
+Windows11とゲーム本体はver0.17.3でModが動くことを確認しております。
 非公式Modのため、本Modの利用において、以下を遵守してください。  
 
 1. Modの開発および利用は自己責任。発生した問題については自分で対処してください。  
