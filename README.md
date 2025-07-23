@@ -57,3 +57,16 @@ The author takes no responsibility for any issues or damages caused by the use o
 本Modの再配布は禁止されています。  
 本Modの著作権その他すべての権利は開発者（Joco Purnomo）に帰属します。  
 本Modは非公式のものであり、ゲームの開発元とは一切関係ありません。  
+
+# 本リポジトリの構成
+```bash
+root
+  ├── img                             <--- README向けの画像があるフォルダ
+  ├── init                            <--- init.batでダウンロードするメイン対象フォルダ
+  ├── Manual_JP                       <--- Modの適用手順書や各Modの説明書がある
+  ├── plugins                         
+  │   ├── ModApplyToggle.dll          <--- 他のModから参照される基幹Mod※これは環境構築時に自動的に適用されます。これがないと他のModも動きません
+  │   ├── ModConcealRole.dll          <--- 配信者向け役割秘匿機能、WordWolfモードで遊ぶ機能を追加する
+  │   ├── ModShowThemeList.dll        <--- 試合中に選択されたジャンル・カスタムお題の一覧を確認できる機能を追加する
+  ├── README.md                       <--- README本体ファイル。GitHubのリポジトリはこれを読み込んでWelcomeページとする
+  └── LICENSE.md                      <--- ライセンスについて英文で記述、２次配布禁止などを記載
