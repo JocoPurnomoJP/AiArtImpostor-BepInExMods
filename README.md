@@ -48,6 +48,13 @@ pluginsフォルダからModApplyToggle.dllを取得して、所定の位置に�
 Modの適用は出来ます。  
 もし、一部ファイル欠落や或いはファイルの破損があった場合は、initフォルダより直接Downloadしてください。  
 
+## Modの選別が面倒な場合は
+update_all_plugins.batを入手して、init.batと同じようにAiArtImpostor.exeと同じフォルダに配置して下さい。  
+実行することで、自動的にpluginsフォルダにある最新DLLを全て取得、Mod適用に必要なBepInEx\pluginsフォルダまで  
+上書き・新規作成しつつ配置します。  
+各DLLの更新を確認するのが面倒な場合は、こちらをご利用下さい。    
+![devcon4](img/update.bat_path.jpg)  
+
 # 免責 Disclaimer
 当 Mod 利用によるトラブルは一切責任を負いません  
 The author takes no responsibility for any issues or damages caused by the use of this Mod.
@@ -70,4 +77,5 @@ root
   │   ├── ModShowThemeList.dll        <--- 試合中に選択されたジャンル・カスタムお題の一覧を確認できる機能を追加する
   ├── init.bat                        <--- Mod適用を可能にするための環境構築・インストールBat
   ├── README.md                       <--- README本体ファイル。GitHubのリポジトリはこれを読み込んでWelcomeページとする
-  └── LICENSE.md                      <--- ライセンスについて英文で記述、２次配布禁止などを記載
+  ├── LICENSE.md                      <--- ライセンスについて英文で記述、２次配布禁止などを記載
+  └── update_all_plugins.bat          <--- pluginsフォルダにある全ての最新DLLを自動的に取得、Local環境のBepInEx\pluginsに上書き・配置するBat
