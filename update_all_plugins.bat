@@ -6,6 +6,9 @@ setlocal enabledelayedexpansion
 set "DLL_URL1=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/ModApplyToggle.dll"
 set "DLL_URL2=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/ModConcealRole.dll"
 set "DLL_URL3=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/ModShowThemeList.dll"
+set "DLL_URL4=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/ModCustomTheme.dll"
+set "DLL_URL5=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/WinFileDialogDllCPlus.dll"
+
 
 :: Destination folder for the downloaded DLLs
 set "DEST_FOLDER=.\BepInEx\plugins"
@@ -89,14 +92,53 @@ if errorlevel 1 goto :ModShowThemeList_dll_download_error
 echo ModShowThemeList.dll downloaded and placed.
 echo log: ModShowThemeList.dll downloaded and placed. >> "%LOG_FILE%"
 echo.
-goto :update_success
+goto :ModCustomTheme_start
 
 :ModShowThemeList_dll_download_error
 echo ERROR: Failed to download ModShowThemeList.dll.
 echo log: Failed to download ModShowThemeList.dll (curl error). >> "%LOG_FILE%"
 set "EXIT_CODE=1"
-goto :final_cleanup_and_exit
+goto :error_exit_loop
 
+
+:ModCustomTheme_start
+echo === Downloading ModCustomTheme.dll ===
+echo.
+set "DLL_FULL_PATH=%DLL_DEST_DIR%\ModCustomTheme.dll"
+echo Downloading ModCustomTheme.dll...
+echo log: Starting ModCustomTheme.dll download from %DLL_URL% >> "%LOG_FILE%"
+curl -L -s -o "%DLL_FULL_PATH%" "%DLL_URL4%" >nul 2>&1
+if errorlevel 1 goto :ModCustomTheme_dll_download_error
+echo ModCustomTheme.dll downloaded and placed.
+echo log: ModCustomTheme.dll downloaded and placed. >> "%LOG_FILE%"
+echo.
+goto :WinFileDialogDllCPlus_start
+
+:ModCustomTheme_dll_download_error
+echo ERROR: Failed to download ModCustomTheme.dll.
+echo log: Failed to download ModCustomTheme.dll (curl error). >> "%LOG_FILE%"
+set "EXIT_CODE=1"
+goto :error_exit_loop
+
+
+:WinFileDialogDllCPlus_start
+echo === Downloading WinFileDialogDllCPlus.dll ===
+echo.
+set "DLL_FULL_PATH=%DLL_DEST_DIR%\WinFileDialogDllCPlus.dll"
+echo Downloading WinFileDialogDllCPlus.dll...
+echo log: Starting WinFileDialogDllCPlus.dll download from %DLL_URL% >> "%LOG_FILE%"
+curl -L -s -o "%DLL_FULL_PATH%" "%DLL_URL5%" >nul 2>&1
+if errorlevel 1 goto :WinFileDialogDllCPlus_dll_download_error
+echo WinFileDialogDllCPlus.dll downloaded and placed.
+echo log: WinFileDialogDllCPlus.dll downloaded and placed. >> "%LOG_FILE%"
+echo.
+goto :update_success
+
+:WinFileDialogDllCPlus_dll_download_error
+echo ERROR: Failed to download WinFileDialogDllCPlus.dll.
+echo log: Failed to download WinFileDialogDllCPlus.dll (curl error). >> "%LOG_FILE%"
+set "EXIT_CODE=1"
+goto :final_cleanup_and_exit
 
 :: --- Script Completion ---
 :update_success
