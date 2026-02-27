@@ -48,6 +48,8 @@ jobs:
           
       - name: '### リリース ###'
         uses: softprops/action-gh-release@v2.5.0
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref_type == 'tag' && github.ref_name || env.DRAFT_TAG_NAME }}
           draft: ${{ github.event_name }} == "workflow_dispatch"
