@@ -1,0 +1,56 @@
+name: Release MOD artifacts.
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - '[1-9][0-9]+.[0-9]+.[0-9]+(-((RC)|(GA)).[1-9][0-9]*)?'
+
+# 各種パラメータを環境変数として設定
+env:
+  PYTHON_VER: '3.12.10'
+  WIN_ARC: 'x64'
+  SCRIPT_NAME: AiArtImpostor-BepInExMods
+  DRAFT_TAG_NAME: ''
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Release
+    # 最新のWindows環境を利用するよう指定します。
+    runs-on: windows-latest
+
+    steps:
+      - name: '### チェックアウト ###'
+        uses: actions/checkout@v6.0.2
+        
+      - name: '### 環境変数設定 ###'
+        id: set_evn
+        run: | 
+          "DRAFT_TAG_NAME=v$(date +'%Y.%m.%d.%H%M%S')" >> $env:GITHUB_ENV
+       
+      - name: '### 環境変数チェック ###'
+        id: check_env
+        run: |
+          echo "github.ref_name: ${{ github.ref_name }}"
+          Get-ChildItem env:
+
+      - name: '### init.batをアーティファクト(.zip)としてアップロード ###'
+        id: artifact-upload-step
+        uses: actions/upload-artifact@v7.0.0
+        with:
+          name: SetupScript
+          path: init.bat
+          if-no-files-found: error
+          compression-level: 9
+          
+      - name: '### リリース ###'
+        uses: softprops/action-gh-release@v2.5.0
+        with:
+          tag_name: ${{ github.ref_type == 'tag' && github.ref_name || env.DRAFT_TAG_NAME }}
+          draft: ${{ github.event_name }} == "workflow_dispatch"
+          prerelease: ${{ github.event_name }} == "workflow_dispatch"
+          preserve_order: # optional
+          generate_release_notes: ${{ github.event_name == 'tag' && true || false }}
