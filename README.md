@@ -74,7 +74,9 @@ root
   ├── plugins                         
   │   ├── ModApplyToggle.dll          <--- 他のModから参照される基幹Mod※これは環境構築時に自動的に適用されます。これがないと他のModも動きません
   │   ├── ModConcealRole.dll          <--- 配信者向け役割秘匿機能、WordWolfモードで遊ぶ機能を追加する
+  │   ├── ModCustomTheme.dll          <--- カスタムお題をCSVファイルを読み込み入力できるボタンを追加する
   │   ├── ModShowThemeList.dll        <--- 試合中に選択されたジャンル・カスタムお題の一覧を確認できる機能を追加する
+  │   └── WinFileDialogDllCPlus.dll   <--- ModCustomTheme.dllを使う時に使用するdllファイル
   ├── init.bat                        <--- Mod適用を可能にするための環境構築・インストールBat
   ├── README.md                       <--- README本体ファイル。GitHubのリポジトリはこれを読み込んでWelcomeページとする
   ├── LICENSE.md                      <--- ライセンスについて英文で記述、２次配布禁止などを記載
