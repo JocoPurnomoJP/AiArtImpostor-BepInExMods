@@ -56,3 +56,6 @@ jobs:
           prerelease: ${{ github.event_name }} == "workflow_dispatch"
           preserve_order: # optional
           generate_release_notes: ${{ github.event_name == 'tag' && true || false }}
+          files: |
+            init.bat
+            update_all_plugins.bat
