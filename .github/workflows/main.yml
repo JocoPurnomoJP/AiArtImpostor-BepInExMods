@@ -19,12 +19,12 @@ jobs:
 
     steps:
       - name: '### チェックアウト ###'
-        uses: actions/checkout@v6.0.2
+        uses: actions/checkout@v4
 
       - name: '### 環境変数設定 ###'
         id: set_evn
         run: |
-          "DRAFT_TAG_NAME=v$(date +'%Y.%m.%d.%H%M%S')" >> $env:GITHUB_ENV
+          "DRAFT_TAG_NAME=v$(Get-Date -Format 'yyyy.MM.dd.HHmmss')" >> $env:GITHUB_ENV
 
       - name: '### リリース ###'
         uses: softprops/action-gh-release@v2.5.0
@@ -32,9 +32,9 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.ref_type == 'tag' && github.ref_name || env.DRAFT_TAG_NAME }}
-          draft: ${{ github.event_name }} == "workflow_dispatch"
-          prerelease: ${{ github.event_name }} == "workflow_dispatch"
-          generate_release_notes: ${{ github.event_name == 'tag' && true || false }}
+          draft: ${{ github.event_name == 'workflow_dispatch' }}
+          prerelease: ${{ github.event_name == 'workflow_dispatch' }}
+          generate_release_notes: ${{ github.ref_type == 'tag' }}
           files: |
             init.bat
             update_all_plugins.bat
