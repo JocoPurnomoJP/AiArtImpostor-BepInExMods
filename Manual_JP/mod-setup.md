@@ -2,9 +2,10 @@
 
 ## セットアップ手順
 
-1. `init.bat` をダウンロードする
-2. `AIArtImpostor.exe` と同じフォルダに配置する
-3. `init.bat` を実行する
+1. [リリースページ](../../../releases/latest) から `SetupScripts.zip` をダウンロードする
+2. zip を解凍し、`init.bat` と `update_all_plugins.bat` を取り出す
+3. `AIArtImpostor.exe` と同じフォルダに配置する
+4. `init.bat` を実行する
 
 実行が完了すると、Mod の動作に必要なファイルが自動的にインストールされます。
 
@@ -29,9 +30,10 @@
 
 追加機能を導入するには `update_all_plugins.bat` を実行してください。
 
-1. `update_all_plugins.bat` をダウンロードする
-2. `AIArtImpostor.exe` と同じフォルダに配置する
-3. `update_all_plugins.bat` を実行する
+> セットアップ手順で `SetupScripts.zip` を解凍済みの場合、`update_all_plugins.bat` はすでに手元にあります。
+
+1. `update_all_plugins.bat` を `AIArtImpostor.exe` と同じフォルダに配置する
+2. `update_all_plugins.bat` を実行する
 
 利用したい機能の説明書を参照してください。
 
