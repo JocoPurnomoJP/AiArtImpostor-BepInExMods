@@ -8,6 +8,7 @@ set "DLL_URL2=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/mai
 set "DLL_URL3=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/ModShowThemeList.dll"
 set "DLL_URL4=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/ModCustomTheme.dll"
 set "DLL_URL5=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/WinFileDialogDllCPlus.dll"
+set "DLL_URL6=https://github.com/JocoPurnomoJP/AiArtImpostor-BepInExMods/raw/main/plugins/ModStreamerControlPanel.dll"
 
 
 :: Destination folder for the downloaded DLLs
@@ -132,13 +133,32 @@ if errorlevel 1 goto :WinFileDialogDllCPlus_dll_download_error
 echo WinFileDialogDllCPlus.dll downloaded and placed.
 echo log: WinFileDialogDllCPlus.dll downloaded and placed. >> "%LOG_FILE%"
 echo.
-goto :update_success
+goto :ModStreamerControlPanel_start
 
 :WinFileDialogDllCPlus_dll_download_error
 echo ERROR: Failed to download WinFileDialogDllCPlus.dll.
 echo log: Failed to download WinFileDialogDllCPlus.dll (curl error). >> "%LOG_FILE%"
 set "EXIT_CODE=1"
-goto :final_cleanup_and_exit
+goto :error_exit_loop
+
+:ModStreamerControlPanel_start
+echo === Downloading ModStreamerControlPanel.dll ===
+echo.
+set "DLL_FULL_PATH=%DLL_DEST_DIR%\ModStreamerControlPanel.dll"
+echo Downloading ModStreamerControlPanel.dll...
+echo log: Starting ModStreamerControlPanel.dll download from %DLL_URL6% >> "%LOG_FILE%"
+curl -L -s -o "%DLL_FULL_PATH%" "%DLL_URL6%" >nul 2>&1
+if errorlevel 1 goto :ModStreamerControlPanel_dll_download_error
+echo ModStreamerControlPanel.dll downloaded and placed.
+echo log: ModStreamerControlPanel.dll downloaded and placed. >> "%LOG_FILE%"
+echo.
+goto :update_success
+
+:ModStreamerControlPanel_dll_download_error
+echo ERROR: Failed to download ModStreamerControlPanel.dll.
+echo log: Failed to download ModStreamerControlPanel.dll (curl error). >> "%LOG_FILE%"
+set "EXIT_CODE=1"
+goto :error_exit_loop
 
 :: --- Script Completion ---
 :update_success

@@ -32,6 +32,7 @@ Windows11とゲーム本体はver0.17.3でModが動くことを確認してお�
 | カスタムお題 CSV 入力 | CSV ファイルでカスタムお題を入力する（最大100文字） | [説明書](manual/mod-custom-theme.md) |
 | 配信者モード | 役割を画面から秘匿し、配信中に安全にプレイする | [説明書](manual/mod-conceal-role.md) |
 | WordWolf モード | インポスターに異なるお題を配布してゲームを楽しむ | [説明書](manual/mod-conceal-role.md) |
+| 配信者向けコントロールパネル | ブラウザから配信者モード等を操作し、自分の役職とお題を確認する | [説明書](manual/mod-streamer-control-panel.md) |
 
 # 免責 Disclaimer
 当 Mod 利用によるトラブルは一切責任を負いません  
@@ -55,6 +56,7 @@ root
   │   ├── ModConcealRole.dll          <--- 配信者向け役割秘匿機能、WordWolfモードで遊ぶ機能を追加する
   │   ├── ModCustomTheme.dll          <--- カスタムお題をCSVファイルを読み込み入力できるボタンを追加する
   │   ├── ModShowThemeList.dll        <--- 試合中に選択されたジャンル・カスタムお題の一覧を確認できる機能を追加する
+  │   ├── ModStreamerControlPanel.dll <--- 配信者向け設定をブラウザから操作できるコントロールパネルを追加する
   │   └── WinFileDialogDllCPlus.dll   <--- ModCustomTheme.dllを使う時に使用するdllファイル
   ├── init.bat                        <--- Mod適用を可能にするための環境構築・インストールBat
   ├── README.md                       <--- README本体ファイル。GitHubのリポジトリはこれを読み込んでWelcomeページとする
