@@ -20,8 +20,8 @@
 
 1. 試合中に **「ShowList」** ボタンをクリックする  
   ![](./images/show_list_button.png)  
-2. お題の一覧が表示される
-  ![](./images/subject_list.png)  
+2. お題の一覧が表示される  
+  ![](./images/subject_list.png)    
 3. **「Back」** ボタンで閉じる
 
 > **注意:** 「Back」を押さない限り、一覧は表示されたままになります。
