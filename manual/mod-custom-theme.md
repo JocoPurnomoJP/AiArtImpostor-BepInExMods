@@ -21,14 +21,18 @@ CSV ファイルを選択することでお題を自動入力でき、通常の�
 ## 使い方
 
 1. プライベートマッチのカスタムお題入力画面を開く
-2. **「CSV」ボタン** をクリックする
-3. ファイル選択ダイアログが開くので CSV ファイルを選択する
-4. お題が自動的に入力される
+2. **「CSV」ボタン** をクリックする  
+  ![](./images/CVS_button.png)  
+3. ファイル選択ダイアログが開くので CSV ファイルを選択する  
+  ![](./images/file_select_dialog.png)  
+4. お題が自動的に入力される  
+  ![](./images/custom_subjects.png)  
 
-**CSV ファイルの文字コードは UTF-8 を使用してください。** それ以外の場合、全角文字が文字化けします。
+> [!WARNING]  
+> ファイルの文字コードは UTF-8 を使用してください。** それ以外の場合、全角文字が文字化けします。
 
 ---
 
 ## 補足
 
-入力したお題のデータ保存には別ツール **「AiArtImpostorPutCustomTitle.exe」** をご利用ください。
+入力したお題のデータ保存には別ツール **「[AiArtImpostorPutCustomTitle](https://github.com/JocoPurnomoJP/AiArtImpostorPutCustomTitle/releases)」** をご利用ください。
